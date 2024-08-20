@@ -17,10 +17,10 @@ if ( getenv( 'IS_DDEV_PROJECT' ) == 'true' ) {
 	defined( 'DB_PASSWORD' ) || define( 'DB_PASSWORD', 'db' );
 
 	/** MySQL hostname */
-	defined( 'DB_HOST' ) || define( 'DB_HOST', 'ddev-wordpressShell-db' );
+	defined( 'DB_HOST' ) || define( 'DB_HOST', 'ddev-blueGravityWordpressTest-db' );
 
 	/** WP_HOME URL */
-	defined( 'WP_HOME' ) || define( 'WP_HOME', 'https://wordpressshell.ddev.site' );
+	defined( 'WP_HOME' ) || define( 'WP_HOME', 'https://bluegravitywordpresstest.ddev.site' );
 
 	/** WP_SITEURL location */
 	defined( 'WP_SITEURL' ) || define( 'WP_SITEURL', WP_HOME . '/' );
