@@ -17,7 +17,7 @@
     $header_data = get_field('header_data', 'option');
     //var_dump($header_data);
     ?>
-    <header>
+    <header class="wrapper">
         <?php
         //Printing menu
         echo clean_custom_menus($header_data['logo']['url']); ?>
