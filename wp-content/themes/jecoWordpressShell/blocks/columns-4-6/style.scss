@@ -1,0 +1,42 @@
+@use "../../src/scss/breakpoints";
+
+.columns-4-6 {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include breakpoints.for-bp("tablet-lg") {
+      grid-template-columns: 3fr 4fr;
+    }
+
+    .wrapper {
+      padding-top: 50px;
+      padding-bottom: 25px;
+
+      .title {
+        font-family: var(--font-Patrick-Hand-SC);
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+
+        @include breakpoints.for-bp("tablet-lg") {
+          font-size: 3rem;
+          line-height: 1;
+        }
+      }
+    }
+
+    .image {
+      img {
+        display: block;
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        object-position: center center;
+
+        @include breakpoints.for-bp("tablet-lg") {
+          height: auto;
+        }
+      }
+    }
+  }
+}
