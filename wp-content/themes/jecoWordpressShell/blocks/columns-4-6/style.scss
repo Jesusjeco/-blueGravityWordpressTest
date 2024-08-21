@@ -17,6 +17,7 @@
         font-family: var(--font-Patrick-Hand-SC);
         font-size: 2.25rem;
         line-height: 2.5rem;
+        margin-bottom: 1rem;
 
         @include breakpoints.for-bp("tablet-lg") {
           font-size: 3rem;

@@ -13,10 +13,15 @@
       padding-top: 50px;
       padding-bottom: 25px;
 
+      .button {
+        margin-bottom: 1rem;
+      }
+
       .title {
         font-family: var(--font-Patrick-Hand-SC);
         font-size: 2.25rem;
         line-height: 2.5rem;
+        margin-bottom: 1rem;
 
         @include breakpoints.for-bp("tablet-lg") {
           font-size: 3rem;
@@ -26,6 +31,8 @@
     }
 
     .image {
+      overflow: hidden;
+
       @include breakpoints.for-bp("tablet-lg") {
         display: flex;
         align-items: flex-end;
@@ -37,6 +44,11 @@
         width: 100%;
         height: 150px;
         object-fit: contain;
+
+        @include breakpoints.for-bp("tablet-lg") {
+          margin-bottom: -50px;
+          height: 250px;
+        }
       }
     }
   }
