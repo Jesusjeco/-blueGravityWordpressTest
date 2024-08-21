@@ -2,6 +2,25 @@
 
 include("includes/index.php");
 
+/**
+ * Changing the_excerpt function so that it always send the first 15 words
+ * @param mixed $excerpt
+ * @return string
+ */
+function custom_excerpt($excerpt) {
+  return wp_trim_words($excerpt, 20, '...');
+}
+add_filter('the_excerpt', 'custom_excerpt');
+
+function my_theme_enqueue_styles() {
+  // Register and enqueue a custom stylesheet for the home page
+  if (is_home()) {
+      wp_enqueue_style('home-page-style', get_template_directory_uri() . '/dist/css/home.css');
+  }
+}
+add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
+
+
 function register_jeco_acf_blocks()
 {
   // Check if function exists to avoid errors

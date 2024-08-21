@@ -1,6 +1,8 @@
 <?php
 get_header(); ?>
-<h1>Single product</h1>
+<div class="wrapper">
+  <h1 class="title"><?php the_title() ?></h1>
+  <div class="content"><?php the_content(); ?></div>
+</div>
 <?php
-the_content();
 get_footer();

@@ -2,7 +2,6 @@
 if (getenv('WP_ENV') !== 'local') {
   function disable_plugin_updates()
   {
-    echo "In production mode";
     if (current_user_can('manage_options')) {
       remove_action('admin_init', '_maybe_update_plugins');
       remove_action('load-update-core.php', 'wp_update_plugins');

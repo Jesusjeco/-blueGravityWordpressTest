@@ -12,6 +12,34 @@ a {
 
 p {
 	font-size: 1rem;
+	margin-bottom: 1rem;
+}
+
+h1,
+.h1 {
+	font-family: var(--font-Patrick-Hand-SC);
+	margin-bottom: 2.5rem;
+	font-size: 2.25rem;
+	line-height: 2.5rem;
+
+	@include for-bp("tablet-lg") {
+		margin-bottom: 4rem;
+		font-size: 3.75rem;
+		line-height: 1;
+	}
+}
+
+h2,
+.h2 {
+	margin-bottom: .5rem;
+	font-size: 1.875rem;
+	line-height: 2.25rem;
+}
+
+h3,
+.h3 {
+	font-size: 1.5rem;
+	line-height: 2rem;
 }
 
 .border-radius {
@@ -19,11 +47,11 @@ p {
 }
 
 .wrapper {
-	width: 95%;
+	width: 90%;
 	margin: 0 auto;
 
 	@include for-bp("desktop-switch") {
-		width: 90%;
+		width: 85%;
 	}
 
 	@include for-bp("desktop-md") {
