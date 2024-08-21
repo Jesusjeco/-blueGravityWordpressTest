@@ -1,3 +1,7 @@
 //Path to image folder AFTER everything has been compiled
 $IMAGE_PATH: "../../dist/images";
 $FONTS_PATH: "../../assets/fonts";
+
+:root{
+  --border-radius: .75rem;
+}

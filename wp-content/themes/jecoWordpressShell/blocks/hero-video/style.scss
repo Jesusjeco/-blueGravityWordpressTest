@@ -1,0 +1,32 @@
+@use "../../src/scss/breakpoints";
+
+.hero-video {
+  height: 100dvh;
+  padding-top: 2rem;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .top_text {
+      background-color: rgba(255, 255, 255, 0.5);
+      padding: 20px;
+      @include breakpoints.for-bp("tablet-switch") {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+    }
+
+    .video_iframe {
+      aspect-ratio: 16/9;
+      width: 100%;
+      overflow: hidden;
+
+      @include breakpoints.for-bp("tablet-switch") {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+    }
+  }
+}
