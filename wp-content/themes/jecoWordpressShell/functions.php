@@ -5,7 +5,7 @@ include("includes/index.php");
 function register_acf_hello_world_block()
 {
   // Check if function exists to avoid errors
-  if (function_exists('acf_register_block_type')) {
+  if (function_exists('acf_register_block_type')) { 
 
     // Register the hello-world block
     acf_register_block_type([
