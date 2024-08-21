@@ -25,6 +25,15 @@ function compileHomeSCSS(cb) {
 		.pipe(dest("dist/css/"));
 } //compileHomeSCSS
 
+function compileAboutSCSS(cb) {
+	cb();
+	return src("src/scss/about.scss")
+		.pipe(sass().on("error", sass.logError))
+		.pipe(autoprefixer())
+		.pipe(cleanCSS())
+		.pipe(dest("dist/css/"));
+} //compileAboutSCSS
+
 function compileBlocksSCSS(cb) {
 	cb();
 	return src("blocks/**/*.scss")
@@ -72,6 +81,7 @@ function compileJS(cb) {
 exports.default = series(
 	compileDefaultSCSS,
 	compileHomeSCSS,
+	compileAboutSCSS,
 	compileBlocksSCSS,
 	compileJS,
 	// compileBootstrapJS,
@@ -81,5 +91,6 @@ exports.default = series(
 exports.watcher = () => {
 	watch(["src/scss/*.scss"], compileDefaultSCSS);
 	watch(["src/scss/home.scss"], compileHomeSCSS);
+	watch(["src/scss/about.scss"], compileAboutSCSS);
 	watch("blocks/**/*.scss", compileBlocksSCSS);
 };
