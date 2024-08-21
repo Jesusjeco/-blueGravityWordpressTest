@@ -9,7 +9,7 @@ $media-query-breakpoints: (
 	tablet-lg: 992px,
 	// tablet-xl: 1024px,
 	desktop-switch: 1180px,
-	 desktop-md: 1240px,
+	desktop-md: 1240px,
 	desktop-lg: 1400px,
 	desktop-xl: 1600px,
 	// wrapper-break: 1636px,
@@ -20,4 +20,3 @@ $media-query-breakpoints: (
 		@content;
 	}
 }
-  

@@ -15,11 +15,10 @@
 <body>
     <?php
     $header_data = get_field('header_data', 'option');
+    //var_dump($header_data);
     ?>
     <header>
-        <h1>Header</h1>
         <?php
-         get_home_url();
-         clean_custom_menus();
-        ?>
+        //Printing menu
+        echo clean_custom_menus($header_data['logo']['url']); ?>
     </header>
