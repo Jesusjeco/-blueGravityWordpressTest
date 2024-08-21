@@ -18,6 +18,10 @@ function my_theme_enqueue_styles() {
       wp_enqueue_style('home-page-style', get_template_directory_uri() . '/dist/css/home.css');
   }
 
+  if (is_single()) {
+    wp_enqueue_style('single-page-style', get_template_directory_uri() . '/dist/css/single.css');
+}
+
   // Check if the current page is using the "About Us" template
   if (is_page_template('templates/about.php')) {
     // Enqueue the custom stylesheet for the "About Us" page
