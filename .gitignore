@@ -2,3 +2,6 @@ wp-content/plugins/all-in-one-wp-migration/storage/zlxk2cnlgydd/*.wpress
 wp-content/ai1wm-backups/*.wpress 
 vendor/
 node-modules/
+wp-content/uploads/
+#This only affects the folder when using the EWWW Image Optimizer plugin
+wp-content/ewww/
