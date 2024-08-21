@@ -7,7 +7,7 @@ button,
 
 	display: inline-flex;
 	align-items: center;
-	font-size: 1.125rem;
+	font-size: 1rem;
 	justify-content: center;
 
 	border: none;
@@ -16,23 +16,37 @@ button,
 	cursor: pointer;
 
 	width: auto;
-	height: 45px;
+	height: 45px; 
 	padding: .5rem;
 
 	color: white;
 
 	@include for-bp("desktop-lg") {
-		font-size: 1.688rem;
+		font-size: 1rem;
 	}
 }
+
 .button-primary {
 	background: var(--primary-color);
 	color: var(--color-white);
+}
+
+.button-primary-outline {
+	background: var(--color-white);
+	color: var(--primary-color);
+	border-radius: var(--border-radius);
+	border-color: var(--primary-color);
+	border-width: 1px;
+	border-style: solid;
+
+	&:hover{
+		background: var(--secondary-color);
+	}
 }
 
 .button-form {
 	background: var(--secondary-color);
 	color: var(--color-white);
 	text-transform: capitalize;
-    font-size: 1.2rem;
+	font-size: 1.2rem;
 }
