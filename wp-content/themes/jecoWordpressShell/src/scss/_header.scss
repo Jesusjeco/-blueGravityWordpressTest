@@ -1,40 +1,90 @@
 header {
-	font-family: var(--font-oswald);
-	.wrapper {
+	font-family: var(--font-poppins);
+	font-size: 1.5rem;
+
+	@include for-bp("tablet-lg") {
+		font-size: 1.25rem;
+	}
+
+	// Navbar styling
+	.navbar {
+		position: relative;
+		background-color: var(--color-white);
 		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
 		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
 
-		padding-top: 10px;
-		padding-bottom: 10px;
+		.navbar-brand {
+			padding: 1rem;
 
-		.logo {
-			max-width: 150px;
+			img {
+				max-height: 50px;
+			}
 		}
 
-		.menu {
-			nav {
-				ul {
-					display: flex;
-					align-items: center;
-					list-style: none;
-					column-gap: 35px;
+		.navbar-nav {
+			display: none;
+			flex-direction: column;
+			width: 100%;
+			background-color: var(--color-white);
+			position: absolute;
+			top: 48px;
 
-					li {
-						a.nav-link:not(.button) {
-							text-transform: uppercase;
-							color: var(--color-black);
-							font-weight: 500;
-							font-size: 1.125rem;
+			@include for-bp("tablet-lg") {
+				display: block;
+				width: auto;
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				position: unset;
+			}
 
-							@include for-bp("desktop-lg") {
-								font-size: 1.688rem;
-							}
-						}
+			.nav-item {
+				display: block;
+				text-align: center;
+				margin: 0;
+				padding: 0.5rem 0;
+
+				@include for-bp("tablet-lg") {
+					display: inline-block;
+					margin-right: 1rem;
+				}
+
+				.nav-link {
+					padding: 0.5rem 1rem;
+					width: 100%;
+					display: block;
+					color: var(--menu-item-color);
+					text-decoration: none;
+					transition: color 0.3s ease;
+
+					&:hover {
+						color: var(--menu-item-hover-color);
 					}
 				}
 			}
 		}
+
+		// Toggle icon for small screens
+		.navbar-toggler {
+			display: none;
+			color: var(--menu-item-color);
+			font-size: 24px;
+			cursor: pointer;
+			padding: 1rem 2rem 1rem 1rem;
+
+			&.open~.navbar-nav {
+				display: block;
+			}
+		}
+
+		// Responsive behavior
+		@media (max-width: 992px) {
+			.navbar-toggler {
+				display: block;
+			}
+		}
 	}
+
 }

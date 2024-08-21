@@ -1,39 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
-
-// Importing Display clean. Alternative to Better
-@font-face {
-	font-family: "Display-Clean";
-	src: url(#{$FONTS_PATH}/Display-Clean.ttf.woff) format("woff"),
-		url(#{$FONTS_PATH}/Display-Clean.ttf.svg#Display-Clean) format("svg"),
-		url(#{$FONTS_PATH}/Display-Clean.ttf.eot),
-		url(#{$FONTS_PATH}/Display-Clean.ttf.eot?#iefix)
-			format("embedded-opentype");
-	font-weight: normal;
-	font-style: normal;
-}
-
-// Importing Abril Display font
-@font-face {
-	font-family: "Abril-Display-Regular";
-	src: url(#{$FONTS_PATH}/Abril_Display_Regular.otf) format("otf");
-	font-weight: normal;
-	font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-	--font-oswald: "Oswald", sans-serif;
-	--font-displayClean: "Display-Clean";
-	--font-Abril-Display-Regular : "Abril-Display-Regular"; 
+	--font-poppins: "Poppins", sans-serif;
 	--font-bold-default: 500;
-	--font-weight-light: 300;
-}
-
-.h1 {
-	font-size: 4rem;
-}
-
-.title-3 {
-	font-family: var(--font-oswald);
-	font-size: 2.5rem;
-	text-transform: uppercase;
+	--font-weight-light: 400;
 }
