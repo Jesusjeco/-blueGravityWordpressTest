@@ -1,15 +1,15 @@
 // Colors palette
 :root {
-	--menu-item-color: #2B3649;
+	--primary-color: #111E52;
+	--secondary-color: #70abfc;
+
+	--menu-item-color: #111E52;
 	--menu-item-hover-color: #70abfc;
 
-	--font-color: #2B3649;
-	--color-black: #000000;
+	--font-color: #111E52;
+
+	--link-color: #111E52;
+	--link-hover-color: #70abfc;
+	
 	--color-white: #ffffff;
-	--color-grey: #e7e7e7;
-
-	--primary-color: #dc002a;
-	--color-scarlet: #9d2a0d;
-
-	--link-color: var(--primary-color);
 }
