@@ -15,10 +15,11 @@ button,
 
 	cursor: pointer;
 
-	min-width: 200px;
-	width: 228px;
-	height: 66px;
-	padding: 0;
+	width: auto;
+	height: 45px;
+	padding: .5rem;
+
+	color: white;
 
 	@include for-bp("desktop-lg") {
 		font-size: 1.688rem;
