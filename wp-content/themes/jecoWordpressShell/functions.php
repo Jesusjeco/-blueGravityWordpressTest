@@ -1,25 +1,41 @@
 <?php
 
 include("includes/index.php");
-/*
-* NOTE ABOUT THE ENQUEUE.
-* I used to do this part the Wordpress way, but I was not able to make the styles been printed in the head tag.
-* I needed that to improve the SEO and load the styles first of anything else.
-* I was not able to do that the Wordpress way, so I decided to do it manually and print the styles directly in the head tag
-* using the link tags and the url of the files.
-*/
-// /*
-// * Registering styles at init
-// */
-// add_action('init', function () {
-//     wp_register_style('style', get_stylesheet_uri());
-//     wp_register_style('default', get_template_directory_uri() . '/dist/css/default.css', false, '1.1', 'all');
-// });
 
-// /*
-// * wp_head hook actions
-// */
-// add_action('wp_head', function () {
-//     wp_enqueue_style('style');
-//     wp_enqueue_style('default');
-// });
+function register_acf_hello_world_block()
+{
+  // Check if function exists to avoid errors
+  if (function_exists('acf_register_block_type')) { 
+
+    // Register the hello-world block
+    acf_register_block_type([
+      'name'              => 'hello-world',
+      'title'             => __('Hello World'),
+      'description'       => __('A custom block for displaying a Hello World message.'),
+      'render_template'   => get_template_directory() . '/blocks/hello-world/render.php', // Path to the render file
+      'category'          => 'formatting',
+      'icon'              => 'admin-site-alt3',
+      'keywords'          => array('hello', 'world'),
+      'supports'          => array(
+        'align' => true,
+      ),
+    ]);
+
+    // Register the hero-video block
+    acf_register_block_type([
+      'name'              => 'hero-video',
+      'title'             => __('Hero Video'),
+      'description'       => __('A custom block for displaying a Hello World message.'),
+      'render_template'   => get_template_directory() . '/blocks/hero-video/render.php', // Path to the render file
+      'category'          => 'formatting',
+      'icon'              => 'admin-site-alt3',
+      'keywords'          => array('hello', 'world'),
+      'supports'          => array(
+        'align' => true,
+      ),
+    ]);
+  }
+}
+
+// Hook into the ACF init action to register the block
+add_action('acf/init', 'register_acf_hello_world_block');
