@@ -1,0 +1,96 @@
+@use "../../src/scss/breakpoints";
+@use "../../src/scss/default.scss";
+
+.about {
+  .ourStory {
+    @extend .wrapper;
+
+    padding-top: 50px !important;
+
+    @include breakpoints.for-bp("tablet-lg") {
+      display: grid;
+      grid-template-columns: 2fr 6fr;
+      gap: 2rem;
+    }
+  }
+
+  .aboutOurGames {
+    @extend .wrapper;
+
+    background-color: var(--light-blue);
+
+    .games {
+      display: grid;
+      gap: 2rem;
+
+      @include breakpoints.for-bp("tablet-lg") {
+        gap: 3rem;
+      }
+
+      .box1,
+      .box3 {
+        display: grid;
+        gap: 1rem;
+
+        @include breakpoints.for-bp("tablet-lg") {
+          gap: 2rem;
+        }
+      }
+
+      .box1 {
+        @include breakpoints.for-bp("tablet-lg") {
+          grid-template-columns: 4fr 2fr;
+        }
+      }
+
+      .box3 {
+        @include breakpoints.for-bp("tablet-lg") {
+          grid-template-columns: 2fr 4fr;
+        }
+      }
+
+      .text1,
+      .text2,
+      .text3 {
+        padding: 2rem;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: var(--border-radius);
+      }
+
+      img {
+        display: block;
+        aspect-ratio: 16/9;
+        width: 100%;
+        border-radius: var(--border-radius);
+      }
+    }
+  }
+
+  .meetTheTeam {
+    @extend .wrapper;
+
+    @include breakpoints.for-bp("tablet-lg") {
+      display: grid;
+      grid-template-columns: 2fr 6fr;
+      gap: 2rem;
+    }
+
+    .team {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(3, 1fr);
+
+      .name {
+        font-weight: 600;
+      }
+
+      .profile {
+        img {
+          aspect-ratio: 5/6;
+          border-radius: var(--border-radius);
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

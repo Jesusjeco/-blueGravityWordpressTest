@@ -1,14 +1,23 @@
-@use "./breakpoints";
+@use "../../src/scss/breakpoints";
 
-.home {
+.blog-section {
   .wrapper {
+    .btn_container {
+      text-align: center;
+      margin-bottom: 4rem;
+
+      @include breakpoints.for-bp("tablet-lg") {
+        margin-bottom: 6rem;
+      }
+    }
+
     .posts {
       display: grid;
       gap: 4rem;
 
-      @include breakpoints.for-bp("tablet-lg") {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      // @include breakpoints.for-bp("tablet-lg") {
+      //   grid-template-columns: repeat(2, 1fr);
+      // }
 
       @include breakpoints.for-bp("desktop-md") {
         grid-template-columns: repeat(3, 1fr);

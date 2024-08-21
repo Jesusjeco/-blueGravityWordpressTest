@@ -17,6 +17,12 @@ function my_theme_enqueue_styles() {
   if (is_home()) {
       wp_enqueue_style('home-page-style', get_template_directory_uri() . '/dist/css/home.css');
   }
+
+  // Check if the current page is using the "About Us" template
+  if (is_page_template('templates/about.php')) {
+    // Enqueue the custom stylesheet for the "About Us" page
+    wp_enqueue_style('about-us-style', get_template_directory_uri() . '/dist/css/about.css');
+}
 }
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
 
@@ -49,6 +55,20 @@ function register_jeco_acf_blocks()
       'category'          => 'formatting',
       'icon'              => 'admin-site-alt3',
       'keywords'          => array('hero', 'iframe'),
+      'supports'          => array(
+        'align' => true,
+      ),
+    ]);
+
+    // Register the blog-section block
+    acf_register_block_type([
+      'name'              => 'blog-section',
+      'title'             => __('Blog section'),
+      'description'       => __('A custom block for displaying a blog section anywhere'),
+      'render_template'   => get_template_directory() . '/blocks/blog-section/render.php', // Path to the render file
+      'category'          => 'formatting',
+      'icon'              => 'admin-site-alt3',
+      'keywords'          => array('blog', 'news'),
       'supports'          => array(
         'align' => true,
       ),

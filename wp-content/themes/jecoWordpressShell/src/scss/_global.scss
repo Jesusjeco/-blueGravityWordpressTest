@@ -47,14 +47,22 @@ h3,
 }
 
 .wrapper {
-	width: 90%;
-	margin: 0 auto;
+	padding-left: 5%;
+	padding-right: 5%;
+	// width: 90%;
+	// margin: 0 auto;
+	padding-top: 100px;
+	padding-bottom: 75px;
 
 	@include for-bp("desktop-switch") {
-		width: 85%;
+		// width: 85%;
+		padding-left: 7.5%;
+		padding-right: 7.5%;
 	}
 
 	@include for-bp("desktop-md") {
-		width: 80%;
+		// width: 80%;
+		padding-left: 10%;
+		padding-right: 10%;
 	}
 }

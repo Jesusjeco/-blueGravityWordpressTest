@@ -1,8 +1,7 @@
 @use "../../src/scss/breakpoints";
 
 .hero-video {
-  height: 100dvh;
-  padding-top: 2rem;
+  min-height: 100dvh;
 
   .wrapper {
     display: flex;
