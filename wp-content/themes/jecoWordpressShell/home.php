@@ -1,25 +1,48 @@
 <?php
 get_header(); ?>
-<h2>This is the blog php template</h2>
+
+<div class="home">
+	<div class="wrapper">
+		<?php if (have_posts()) { ?>
+			<h1>Latest Blog Posts</h1>
+			<div class="posts">
+				<?php
+				while (have_posts()) {
+					the_post();
+					$thumbnail_url = get_the_post_thumbnail_url();
+					$thumbnail_id = get_post_thumbnail_id($post->ID);
+					$alt_text = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true); ?>
+					<div class="post">
+						<div class="image">
+							<a href="<?php the_permalink() ?>"><img src="<?= $thumbnail_url ?>" alt="<?= esc_attr($alt_text) ?>"></a>
+						</div>
+						<a href="<?php the_permalink() ?>">
+							<h2 class="title"><?php the_title(); ?></h2>
+						</a>
+						<hr class="divider">
+						<div class="excerpt"><?php the_excerpt() ?></div>
+						<div><a href="<?php the_permalink() ?>" class="button button-primary-outline">Take a look!</a></div>
+					</div>
+				<?php
+				} ?>
+			</div>
+		<?php
+			the_posts_navigation(
+				[
+					'mid_size' => 2,
+					'prev_text' => 'Previous Page',
+					'next_text' => 'Next Page',
+				]
+			);
+			wp_reset_postdata(); // end while
+		} //end if
+		else { ?>
+			<div class="message">No posts where found</div>
+		<?php
+		} // end else
+		?>
+
+	</div>
+</div>
 <?php
-
-if (have_posts()) {
-    while (have_posts()) {
-        the_post();
-        the_content();
-    }
-
-    the_posts_navigation(
-        [
-            'mid_size' => 2,
-            'prev_text' => 'Previous Page',
-            'next_text' => 'Next Page',
-        ]
-    );
-
-    wp_reset_postdata(); // end while
-} //end if
-else {
-    //No content Found
-} // end else
 get_footer();
