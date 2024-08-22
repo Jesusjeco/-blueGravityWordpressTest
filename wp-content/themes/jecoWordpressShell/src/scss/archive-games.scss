@@ -1,0 +1,52 @@
+@use "./breakpoints";
+
+.games-archive {
+  .wrapper {
+    padding-top: 50px;
+    .games {
+      display: grid;
+      gap: 4rem;
+
+      @include breakpoints.for-bp("tablet-lg") {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .game {
+        display: grid;
+        gap: 1rem;
+        max-width: 450px;
+        margin: 0 auto;
+
+        .image {
+          img {
+            display: block;
+            aspect-ratio: 16/9;
+            width: 100%;
+            object-fit: cover;
+            object-position: center center;
+
+            border-radius: var(--border-radius);
+          }
+        }
+
+        .divider {
+          margin: 0;
+          border: none;
+          height: 1px;
+          background-color: var(--secondary-color);
+        }
+
+        .excerpt {
+          font-size: .75rem;
+          line-height: 1rem;
+
+          @include breakpoints.for-bp("tablet-lg") {
+            font-size: .875rem;
+            line-height: 1.25rem;
+          }
+        }
+      }
+
+    }
+  }
+}

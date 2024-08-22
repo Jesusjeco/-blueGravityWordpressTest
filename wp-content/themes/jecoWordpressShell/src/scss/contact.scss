@@ -1,0 +1,52 @@
+@use "./breakpoints";
+
+.contact {
+  .wrapper {
+    padding-top: 50px;
+
+    .container {
+      display: grid;
+      gap: 2rem;
+
+      @include breakpoints.for-bp("tablet-lg") {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        @include breakpoints.for-bp("tablet-lg") {
+          gap: 2rem;
+
+          align-items: start;
+          justify-content: center;
+        }
+
+        .contact {
+          * {
+            margin: 0;
+            font-size: 1.25rem;
+          }
+        }
+      }
+
+      .image {
+        img {
+          display: block;
+          width: 100%;
+          max-width: 500px;
+          margin: 0 auto;
+          border-radius: var(--border-radius);
+          aspect-ratio: 16/9;
+
+          @include breakpoints.for-bp("tablet-lg") {
+            max-width: unset;
+          }
+        }
+      }
+    }
+  }
+}
