@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="<?= BLOCKS_STYLES_PATH . "/columns-4-6-button/style.css" ?>">
 <?php
 $data = get_field('data');
 $blockID = $block['id'];
