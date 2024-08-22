@@ -5,8 +5,9 @@ $blockID = $block['id'];
 <style>
   #<?= $blockID ?> {
     background: url(<?= $data['background']['url'] ?>);
-    object-fit: cover;
-    object-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 </style>
 <div class="hero-video" id="<?= $blockID ?>">

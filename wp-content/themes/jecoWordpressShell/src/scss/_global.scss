@@ -8,6 +8,9 @@ a {
 	text-decoration: none;
 	color: var(--link-color);
 	cursor: pointer;
+	:hover{
+		color: var(--link-hover-color);
+	}
 }
 
 p {
@@ -48,6 +51,10 @@ h3,
 
 .border-radius {
 	border-radius: var(--border-radius);
+}
+
+.sr-only {
+	display: none;
 }
 
 .wrapper {

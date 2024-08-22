@@ -23,7 +23,7 @@ $data = get_field('data'); ?>
       }
       ?>
       <div class="image">
-        <img src="<?= $data['image']['url'] ?>" alt="<?= $data['image']['alt'] ?>">
+        <img loading="lazy"  src="<?= $data['image']['url'] ?>" alt="<?= $data['image']['alt'] ?>">
       </div>
     </div>
   </div>

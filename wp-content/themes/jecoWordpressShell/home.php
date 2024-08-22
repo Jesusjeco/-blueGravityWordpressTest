@@ -9,19 +9,24 @@ get_header(); ?>
 				<?php
 				while (have_posts()) {
 					the_post();
+					$the_title = get_the_title();
+					$the_permalink = get_permalink();
 					$thumbnail_url = get_the_post_thumbnail_url();
 					$thumbnail_id = get_post_thumbnail_id($post->ID);
 					$alt_text = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true); ?>
 					<div class="post">
 						<div class="image">
-							<a href="<?php the_permalink() ?>"><img src="<?= $thumbnail_url ?>" alt="<?= esc_attr($alt_text) ?>"></a>
+							<a href="<?= $the_permalink ?>">
+								<img loading="lazy" src="<?= $thumbnail_url ?>" alt="<?= esc_attr($alt_text) ?>">
+								<span class="sr-only"><?= $the_title  ?></span>
+							</a>
 						</div>
-						<a href="<?php the_permalink() ?>">
-							<h2 class="title"><?php the_title(); ?></h2>
+						<a href="<?= $the_permalink ?>">
+							<h2 class="title"><?= $the_title  ?></h2>
 						</a>
 						<hr class="divider">
 						<div class="excerpt"><?php the_excerpt() ?></div>
-						<div><a href="<?php the_permalink() ?>" class="button button-primary-outline">Take a look!</a></div>
+						<div><a href="<?= $the_permalink ?>" class="button button-primary-outline">Take a look!</a></div>
 					</div>
 				<?php
 				} ?>
