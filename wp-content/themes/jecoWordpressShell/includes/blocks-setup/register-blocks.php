@@ -10,7 +10,7 @@ if (class_exists('ACF')) {
         'name'              => 'hello-world',
         'title'             => __('Hello World'),
         'description'       => __('A custom block for displaying a Hello World message.'),
-        'render_template'   => get_template_directory() . '/blocks/hello-world/render.php', // Path to the render file
+        'render_template'   => get_template_directory() . '/blocks/hello-world/render.php', 
         'category'          => 'formatting',
         'icon'              => 'admin-site-alt3',
         'keywords'          => array('hello', 'world'),
@@ -24,7 +24,7 @@ if (class_exists('ACF')) {
         'name'              => 'hero-video',
         'title'             => __('Hero Video'),
         'description'       => __('A custom block for displaying a hero with am iframe.'),
-        'render_template'   => get_template_directory() . '/blocks/hero-video/render.php', // Path to the render file
+        'render_template'   => get_template_directory() . '/blocks/hero-video/render.php', 
         'category'          => 'formatting',
         'icon'              => 'admin-site-alt3',
         'keywords'          => array('hero', 'iframe'),
@@ -40,11 +40,25 @@ if (class_exists('ACF')) {
       acf_register_block_type([
         'name'              => 'blog-section',
         'title'             => __('Blog section'),
-        'description'       => __('A custom block for displaying a blog section anywhere'),
-        'render_template'   => get_template_directory() . '/blocks/blog-section/render.php', // Path to the render file
+        'description'       => __('A custom block for displaying a blog section '),
+        'render_template'   => get_template_directory() . '/blocks/blog-section/render.php', 
         'category'          => 'formatting',
         'icon'              => 'admin-site-alt3',
         'keywords'          => array('blog', 'news'),
+        'supports'          => array(
+          'align' => true,
+        ),
+      ]);
+
+      // Register the services block
+      acf_register_block_type([
+        'name'              => 'services',
+        'title'             => __('Services'),
+        'description'       => __('A custom block for displaying a services section '),
+        'render_template'   => get_template_directory() . '/blocks/services/render.php', 
+        'category'          => 'formatting',
+        'icon'              => 'admin-site-alt3',
+        'keywords'          => array('services', 'service'),
         'supports'          => array(
           'align' => true,
         ),
@@ -55,7 +69,7 @@ if (class_exists('ACF')) {
         'name'              => 'columns-4-6',
         'title'             => __('4 6 columns'),
         'description'       => __('A custom block for displaying a 2 columns layouts block.'),
-        'render_template'   => get_template_directory() . '/blocks/columns-4-6/render.php', // Path to the render file
+        'render_template'   => get_template_directory() . '/blocks/columns-4-6/render.php', 
         'category'          => 'formatting',
         'icon'              => 'admin-site-alt3',
         'keywords'          => array('columns'),
@@ -69,7 +83,7 @@ if (class_exists('ACF')) {
         'name'              => 'columns-4-6-button',
         'title'             => __('4 6 columns buttons'),
         'description'       => __('A custom block for displaying a 2 columns layouts and a top button block.'),
-        'render_template'   => get_template_directory() . '/blocks/columns-4-6-button/render.php', // Path to the render file
+        'render_template'   => get_template_directory() . '/blocks/columns-4-6-button/render.php', 
         'category'          => 'formatting',
         'icon'              => 'admin-site-alt3',
         'keywords'          => array('columns', 'button'),
