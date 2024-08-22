@@ -66,11 +66,6 @@ header {
 		// Toggle icon for small screens
 		.navbar-toggler {
 			display: block;
-
-			@include for-bp("tablet-lg") {
-				display: none;
-			}
-
 			color: var(--menu-item-color);
 			font-size: 24px;
 			cursor: pointer;
@@ -78,6 +73,10 @@ header {
 
 			&.open~.navbar-nav {
 				display: block;
+			}
+
+			@include for-bp("tablet-lg") {
+				display: none;
 			}
 		}
 	}
