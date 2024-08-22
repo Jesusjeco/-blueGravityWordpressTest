@@ -20,6 +20,10 @@ function jeco_enqueue_conditional_block_styles()
     wp_enqueue_style('blog-section-block', BLOCKS_STYLES_PATH . 'blog-section/style.css');
   }
 
+  if (has_block('acf/services')) {
+    wp_enqueue_style('services-block', BLOCKS_STYLES_PATH . 'services/style.css');
+  }
+
   if (has_block('acf/columns-4-6')) {
     wp_enqueue_style('columns-4-6-block', BLOCKS_STYLES_PATH . 'columns-4-6/style.css');
   }

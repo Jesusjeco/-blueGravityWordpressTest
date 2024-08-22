@@ -5,8 +5,9 @@
  */
 get_header(); ?>
 <div class="services">
-  <main>
+  <div class="wrapper">
     <?php the_content(); ?>
-  </main>
+  </div>
 </div>
-<?php get_footer() ?>
+
+<?php get_footer();
