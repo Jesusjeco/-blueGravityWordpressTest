@@ -7,6 +7,7 @@
 
     @include breakpoints.for-bp("tablet-lg") {
       grid-template-columns: 3fr 4fr;
+      align-items: center;
     }
 
     .wrapper {

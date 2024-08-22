@@ -3,7 +3,7 @@ $footer_data = get_field('footer_data', 'option');
 ?>
 <footer>
     <div class="wrapper">
-        <div class="logo"><img src="<?= $footer_data['logo']['url'] ?>" alt="<?= $footer_data['logo']['alt'] ?>"></div>
+        <div class="logo"><img loading="lazy"  src="<?= $footer_data['logo']['url'] ?>" alt="<?= $footer_data['logo']['alt'] ?>"></div>
         <div class="text"><?= $footer_data['text'] ?></div>
         <div class="socials">
             <?php
@@ -11,7 +11,7 @@ $footer_data = get_field('footer_data', 'option');
                 foreach ($footer_data['socials'] as $key => $social) { ?>
                     <div class="social">
                         <a target="_blank" href="<?= $social['url'] ?>">
-                            <img src="<?= $social['icon']['url'] ?>" alt="<?= $social['icon']['alt'] ?>">
+                            <img loading="lazy"  src="<?= $social['icon']['url'] ?>" alt="<?= $social['icon']['alt'] ?>">
                         </a>
                     </div>
             <?php

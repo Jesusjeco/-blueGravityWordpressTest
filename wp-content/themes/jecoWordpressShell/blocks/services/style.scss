@@ -8,6 +8,7 @@
 
     @include breakpoints.for-bp("tablet-lg") {
       grid-template-columns: 1fr 1fr;
+      align-items: center;
       gap: 0;
       margin-bottom: 0;
 
@@ -26,20 +27,19 @@
     .text {
       @include breakpoints.for-bp("tablet-lg") {
         grid-area: text;
-        padding: 1.5rem;
       }
     }
 
     .image {
       img {
+        width: 100%;
         max-width: 500px;
         margin: 0 auto;
 
         @include breakpoints.for-bp("tablet-lg") {
           max-width: unset;
-          width: 100%;
           aspect-ratio: 6 / 4;
-          object-fit: cover;
+          object-fit: contain;
         }
       }
 

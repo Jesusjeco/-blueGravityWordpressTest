@@ -14,7 +14,7 @@ function clean_custom_menus($logo_url = null)
 				$menu_list .= '<a class="navbar-brand" href="' . esc_url(home_url('/')) . '">';
 
 				if ($logo_url) {
-					$menu_list .= '<img src="' . esc_url($logo_url) . '" alt="Logo" class="d-inline-block align-top" />'; // Display the logo
+					$menu_list .= '<img loading="lazy"  src="' . esc_url($logo_url) . '" alt="Logo" class="d-inline-block align-top" />'; // Display the logo
 				} else {
 					$menu_list .= get_bloginfo('name'); // Fallback to site name if no logo is set
 				}
