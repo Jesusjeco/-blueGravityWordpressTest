@@ -7,26 +7,37 @@ include("includes/index.php");
  * @param mixed $excerpt
  * @return string
  */
-function custom_excerpt($excerpt) {
+function custom_excerpt($excerpt)
+{
   return wp_trim_words($excerpt, 20, '...');
 }
 add_filter('the_excerpt', 'custom_excerpt');
 
-function my_theme_enqueue_styles() {
+function my_theme_enqueue_styles()
+{
   // Register and enqueue a custom stylesheet for the home page
   if (is_home()) {
-      wp_enqueue_style('home-page-style', get_template_directory_uri() . '/dist/css/home.css');
+    wp_enqueue_style('home-page-style', get_template_directory_uri() . '/dist/css/home.css');
   }
 
   if (is_single()) {
     wp_enqueue_style('single-page-style', get_template_directory_uri() . '/dist/css/single.css');
-}
+  }
+
+  if (is_post_type_archive('games')) {
+    wp_enqueue_style('games-archive-style', get_template_directory_uri() . '/dist/css/archive-games.css', array(), '1.0', 'all');
+  }
 
   // Check if the current page is using the "About Us" template
   if (is_page_template('templates/about.php')) {
     // Enqueue the custom stylesheet for the "About Us" page
     wp_enqueue_style('about-us-style', get_template_directory_uri() . '/dist/css/about.css');
-}
+  }
+
+  if (is_page_template('templates/contact.php')) {
+    // Enqueue the custom stylesheet for the "About Us" page
+    wp_enqueue_style('contact-style', get_template_directory_uri() . '/dist/css/contact.css');
+  }
 }
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
 
