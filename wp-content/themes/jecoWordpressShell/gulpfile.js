@@ -7,41 +7,14 @@ const concat = require("gulp-concat");
 const babel = require("gulp-babel");
 var uglify = require("gulp-uglify");
 
-function compileDefaultSCSS(cb) {
+function compilePagesSCSS(cb) {
 	cb();
-	return src("src/scss/default.scss")
-		.pipe(sass().on("error", sass.logError))
-		.pipe(autoprefixer())
-		.pipe(cleanCSS())
-		.pipe(dest("dist/css/"));
-} //compileDefaultSCSS
-
-function compileHomeSCSS(cb) {
-	cb();
-	return src("src/scss/home.scss")
+	return src("src/scss/*.scss")
 		.pipe(sass().on("error", sass.logError))
 		.pipe(autoprefixer())
 		.pipe(cleanCSS())
 		.pipe(dest("dist/css/"));
 } //compileHomeSCSS
-
-function compileSingleSCSS(cb) {
-	cb();
-	return src("src/scss/single.scss")
-		.pipe(sass().on("error", sass.logError))
-		.pipe(autoprefixer())
-		.pipe(cleanCSS())
-		.pipe(dest("dist/css/"));
-} //compileAboutSCSS
-
-function compileAboutSCSS(cb) {
-	cb();
-	return src("src/scss/about.scss")
-		.pipe(sass().on("error", sass.logError))
-		.pipe(autoprefixer())
-		.pipe(cleanCSS())
-		.pipe(dest("dist/css/"));
-} //compileAboutSCSS
 
 function compileBlocksSCSS(cb) {
 	cb();
@@ -88,10 +61,7 @@ function compileJS(cb) {
 // } //runSwiperJs
 
 exports.default = series(
-	compileDefaultSCSS,
-	compileHomeSCSS,
-	compileSingleSCSS,
-	compileAboutSCSS,
+	compilePagesSCSS,
 	compileBlocksSCSS,
 	compileJS,
 	// compileBootstrapJS,
@@ -99,9 +69,6 @@ exports.default = series(
 	// compileSwiperJs
 );
 exports.watcher = () => {
-	watch(["src/scss/*.scss"], compileDefaultSCSS);
-	watch(["src/scss/home.scss"], compileHomeSCSS);
-	watch(["src/scss/single.scss"], compileSingleSCSS);
-	watch(["src/scss/about.scss"], compileAboutSCSS);
+	watch(["src/scss/*.scss"], compilePagesSCSS);
 	watch("blocks/**/*.scss", compileBlocksSCSS);
 };

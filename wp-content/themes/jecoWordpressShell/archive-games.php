@@ -1,16 +1,22 @@
 <?php get_header(); ?>
 
-<div class="games">
+<div class="games-archive">
   <div class="wrapper">
     <main id="main" class="site-main">
       <header class="page-header">
         <h1 class="page-title">Games</h1>
       </header>
 
-      <?php if (have_posts()) : ?>
-        <div class="games-list">
-          <?php while (have_posts()) : the_post(); ?>
-            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+      <div class="games">
+        <?php if (have_posts()) : ?>
+          <?php while (have_posts()) : the_post();
+            $thumbnail_url = get_the_post_thumbnail_url();
+            $thumbnail_id = get_post_thumbnail_id($post->ID);
+            $alt_text = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true); ?>
+            <article class="game" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+              <div class="image">
+                <a href="<?php the_permalink() ?>"><img src="<?= $thumbnail_url ?>" alt="<?= esc_attr($alt_text) ?>"></a>
+              </div>
               <header class="entry-header">
                 <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
               </header>
@@ -20,13 +26,13 @@
               </div>
             </article>
           <?php endwhile; ?>
-        </div>
 
-        <?php the_posts_navigation(); ?>
+          <?php the_posts_navigation(); ?>
 
-      <?php else : ?>
-        <p>No games found.</p>
-      <?php endif; ?>
+        <?php else : ?>
+          <p>No games found.</p>
+        <?php endif; ?>
+      </div>
     </main>
   </div>
 </div>
