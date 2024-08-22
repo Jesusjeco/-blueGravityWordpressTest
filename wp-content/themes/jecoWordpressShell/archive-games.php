@@ -15,7 +15,7 @@
             $alt_text = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true); ?>
             <article class="game" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
               <div class="image">
-                <a href="<?php the_permalink() ?>"><img src="<?= $thumbnail_url ?>" alt="<?= esc_attr($alt_text) ?>"></a>
+                <a href="<?php the_permalink() ?>"><img loading="lazy"  src="<?= $thumbnail_url ?>" alt="<?= esc_attr($alt_text) ?>"></a>
               </div>
               <header class="entry-header">
                 <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>

@@ -28,6 +28,6 @@ $blockID = $block['id'];
       <div class="title"><?= $data['title'] ?></div>
       <div class="text"><?= $data['text'] ?></div>
     </div>
-    <div class="image"><img src="<?= $data['image']['url'] ?>" alt="<?= $data['image']['alt'] ?>"></div>
+    <div class="image"><img loading="lazy"  src="<?= $data['image']['url'] ?>" alt="<?= $data['image']['alt'] ?>"></div>
   </div>
 </div>
