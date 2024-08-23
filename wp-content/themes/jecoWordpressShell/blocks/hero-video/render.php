@@ -8,6 +8,7 @@ $blockID = $block['id'];
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
   }
 </style>
 <div class="hero-video" id="<?= $blockID ?>">
