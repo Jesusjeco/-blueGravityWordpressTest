@@ -1,82 +1,100 @@
-header {
-	font-family: var(--font-poppins);
-	font-size: 1.5rem;
-	padding-top: 0 !important;
-	padding-bottom: 0 !important;
+.menu {
+	border-bottom: 1px solid black;
 
-	@include for-bp("tablet-lg") {
-		font-size: 1.25rem;
-	}
+	.wrapper {
+		font-family: var(--font-poppins);
+		font-size: 1.5rem;
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
 
-	// Navbar styling
-	.navbar {
-		position: relative;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		flex-wrap: wrap;
-
-		.navbar-brand {
-			padding: 1rem;
-
-			img {
-				max-height: 50px;
-			}
+		@include for-bp("tablet-lg") {
+			font-size: 1.25rem;
 		}
 
-		.navbar-nav {
-			display: none;
-			width: 100%;
-			position: absolute;
-			top: 48px;
-			padding: 0;
+		// Navbar styling
+		.navbar {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
 
-			@include for-bp("tablet-lg") {
-				display: flex;
-				gap: 1rem;
-				width: auto;
-				list-style: none;
-				margin: 0;
-				position: unset;
-			}
+			.navbar-brand {
+				padding: 1rem;
 
-			.nav-item {
-				display: block;
-				text-align: center;
-				margin: 0;
-				padding: 0.5rem 0;
+				img {
+					max-height: 45px;
 
-				.nav-link {
-					padding: 0.5rem 1rem;
-					width: 100%;
-					display: block;
-					color: var(--menu-item-color);
-					text-decoration: none;
-					transition: color 0.3s ease;
-
-					&:hover {
-						color: var(--menu-item-hover-color);
+					@include for-bp("tablet-lg") {
+						max-height: 50px;
 					}
 				}
 			}
-		}
 
-		// Toggle icon for small screens
-		.navbar-toggler {
-			display: block;
-			color: var(--menu-item-color);
-			font-size: 24px;
-			cursor: pointer;
-			padding: 1rem 2rem 1rem 1rem;
+			.navbar-nav {
+				display: none;
+				width: 100%;
+				position: absolute;
+				padding: 0;
+				top: 54px;
+				z-index: 5;
 
-			&.open~.navbar-nav {
-				display: block;
+				&.open {
+					background-color: white;
+					height: 90dvh;
+
+					.nav-item {
+						padding: 1.5rem 0;
+					}
+				}
+
+				@include for-bp("tablet-lg") {
+					display: flex;
+					gap: 1rem;
+					width: auto;
+					list-style: none;
+					margin: 0;
+					position: unset;
+				}
+
+				.nav-item {
+					display: block;
+					text-align: center;
+					margin: 0;
+					padding: 0.5rem 0;
+
+					.nav-link {
+						padding: 0.5rem 1rem;
+						width: 100%;
+						display: block;
+						color: var(--menu-item-color);
+						text-decoration: none;
+						transition: color 0.3s ease;
+
+						&:hover {
+							color: var(--menu-item-hover-color);
+						}
+					}
+				}
 			}
 
-			@include for-bp("tablet-lg") {
-				display: none;
+			// Toggle icon for small screens
+			.navbar-toggler {
+				display: block;
+				color: var(--menu-item-color);
+				font-size: 24px;
+				cursor: pointer;
+				padding: 1rem 2rem 1rem 1rem;
+
+				&.open~.navbar-nav {
+					display: block;
+				}
+
+				@include for-bp("tablet-lg") {
+					display: none;
+				}
 			}
 		}
 	}
+
 
 }

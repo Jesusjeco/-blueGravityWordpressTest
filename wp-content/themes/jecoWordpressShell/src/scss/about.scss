@@ -6,11 +6,32 @@
     @extend .wrapper;
 
     padding-top: 50px !important;
+    display: grid;
+    gap: 1rem;
 
     @include breakpoints.for-bp("tablet-lg") {
-      display: grid;
       grid-template-columns: 2fr 6fr;
       gap: 2rem;
+    }
+
+    .title {
+      margin-bottom: 1rem;
+    }
+
+    .image {
+      img {
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        object-position: center center;
+        border-radius: var(--border-radius);
+        width: 100%;
+        margin: 0 auto;
+        max-width: 350px;
+
+        @include breakpoints.for-bp("tablet-lg") {
+          max-width: unset;
+        }
+      }
     }
   }
 
